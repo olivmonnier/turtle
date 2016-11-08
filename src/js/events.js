@@ -1,5 +1,6 @@
 const nunjucks = require('nunjucks');
 const fileSystem = require('./file');
+const CodeMirror = require('codemirror');
 const Config = require('electron-config');
 const config = new Config();
 
