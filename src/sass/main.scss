@@ -1,0 +1,62 @@
+@import '../../node_modules/bootstrap-sass/assets/stylesheets/bootstrap';
+
+$color-black: #323232;
+$color-white: #fff;
+
+html, body {
+  margin: 0;
+  height: 100%;
+}
+
+.btn, .form-control {
+  border-radius: 0;
+}
+
+.main {
+  display: table;
+  height: 100%;
+  width: 100%;
+
+  > * {
+    display: table-cell;
+    height: 100%
+  }
+  > .nav {
+    width: 50px;
+    background-color: $color-black;
+
+    > li {
+      > a {
+        text-align: center;
+        color: $color-white;
+
+        &:hover, &:focus {
+          color: $color-black;
+        }
+      }
+    }
+  }
+}
+
+.main-content {
+  > .editor {
+    @media(min-width: $screen-md-min) {
+      display: table;
+      height: 100%;
+      width: 100%;
+    }
+
+    > * {
+      @media(min-width: $screen-md-min) {
+        display: table-cell;
+        height: 100%;
+        width: 50%;
+      }
+    }
+    .CodeMirror {
+      @media(min-width: $screen-md-min) {
+        height: 100%;
+      }
+    }
+  }
+}
