@@ -40,13 +40,16 @@ html, body {
 
 .main-content {
   > .editor {
+    height: 100%;
+
     @media(min-width: $screen-md-min) {
-      display: table;
-      height: 100%;
+      display: table;  
       width: 100%;
     }
 
     > * {
+      height: 50%;
+
       @media(min-width: $screen-md-min) {
         display: table-cell;
         height: 100%;
@@ -54,9 +57,7 @@ html, body {
       }
     }
     .CodeMirror {
-      @media(min-width: $screen-md-min) {
-        height: 100%;
-      }
+      height: 100%;
     }
   }
 }

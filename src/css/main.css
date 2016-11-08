@@ -5837,18 +5837,18 @@ html, body {
       .main > .nav > li > a:hover, .main > .nav > li > a:focus {
         color: #323232; }
 
-@media (min-width: 992px) {
-  .main-content > .editor {
-    display: table;
-    height: 100%;
-    width: 100%; } }
-
-@media (min-width: 992px) {
+.main-content > .editor {
+  height: 100%; }
+  @media (min-width: 992px) {
+    .main-content > .editor {
+      display: table;
+      width: 100%; } }
   .main-content > .editor > * {
-    display: table-cell;
-    height: 100%;
-    width: 50%; } }
-
-@media (min-width: 992px) {
+    height: 50%; }
+    @media (min-width: 992px) {
+      .main-content > .editor > * {
+        display: table-cell;
+        height: 100%;
+        width: 50%; } }
   .main-content > .editor .CodeMirror {
-    height: 100%; } }
+    height: 100%; }
