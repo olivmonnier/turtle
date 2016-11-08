@@ -11,3 +11,24 @@ exports.openFile = function(editor) {
     }
   });
 }
+
+exports.saveMockup = function(editor) {
+  if (FILE_OPEN) {
+    fs.writeFileSync(FILE_OPEN, editor.getValue());
+  } else {
+    dialog.showSaveDialog(function(filepath) {
+      if (filepath) {
+        FILE_OPEN = filepath;
+        fs.writeFileSync(filepath, editor.getValue());
+      }
+    });
+  }
+}
+
+exports.exportMockup = function(content) {
+  dialog.showSaveDialog(function(filepath) {
+    if (filepath) {
+      fs.writeFileSync(filepath, content);
+    }
+  });
+}

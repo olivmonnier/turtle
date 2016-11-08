@@ -25,6 +25,14 @@ module.exports = function(editor, output) {
     CodeMirror.signal(editor, 'change');
   });
 
+  $(document).on('click', '.btn-save-mockup', function() {
+    fileSystem.saveMockup(editor);
+  });
+
+  $(document).on('click', '.btn-export-mockup', function() {
+    fileSystem.exportMockup(nunjucks.renderString(editor.getValue()));
+  });
+
   $(document).on('click', '.btn-open', function() {
     fileSystem.openFile(editor);
   });

@@ -5844,7 +5844,8 @@ html, body {
       display: table;
       width: 100%; } }
   .main-content > .editor > * {
-    height: 50%; }
+    height: 50%;
+    overflow: auto; }
     @media (min-width: 992px) {
       .main-content > .editor > * {
         display: table-cell;
