@@ -5,7 +5,7 @@ const Config = require('electron-config');
 const config = new Config();
 
 function nunjucksConfig() {
-  nunjucksOptions = { autoescape: true };
+  nunjucksOptions = { autoescape: true, trimBlocks: true };
   nunjucks.configure(TEMPLATES_PATH, nunjucksOptions);
 }
 

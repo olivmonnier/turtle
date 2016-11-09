@@ -11,22 +11,25 @@ window.FILE_OPEN = null;
 window.TEMPLATES_PATH = config.get('templatePath') || process.cwd();
 const events = require('./src/js/events');
 
-const editor = CodeMirror(document.getElementById('editor'), {
-  mode: 'htmlmixed',
-  theme: 'material',
-  lineNumbers: true,
-  autofocus: true,
-  tabSize: 2,
-  extraKeys: {"Ctrl-Space": "autocomplete"}
-});
-const output = CodeMirror(document.getElementById('output'), {
+let editorOptions = {
   mode: 'htmlmixed',
   theme: 'material',
   lineNumbers: true,
   tabSize: 2,
-  readOnly: true,
+  lineWrapping: true,
   extraKeys: {"Ctrl-Space": "autocomplete"}
-});
+}
+
+const editor = CodeMirror(document.getElementById('editor'),
+  Object.assign({
+    autofocus: true
+  }, editorOptions)
+);
+const output = CodeMirror(document.getElementById('output'),
+  Object.assign({
+    readOnly: true
+  }, editorOptions)
+);
 
 if(typeof(window) !== 'undefined') {
   $('[data-toggle="tooltip"]').tooltip();
