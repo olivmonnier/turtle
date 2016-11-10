@@ -26,6 +26,12 @@ module.exports = function(editor, output) {
     CodeMirror.signal(editor, 'change');
   });
 
+  $(document).on('click', '.btn-new-file', function() {
+    FILE_OPEN = '';
+    editor.setValue('');
+    output.setValue('');
+  });
+
   $(document).on('click', '.btn-save-mockup', function() {
     fileSystem.saveMockup(editor);
   });
